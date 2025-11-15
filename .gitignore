@@ -1,0 +1,16 @@
+# add git ignore files for fast api
+*.pyc
+__pycache__/
+instance/
+.venv/
+.env
+.idea/
+.vscode/
+.DS_Store
+*.sqlite3
+logs/
+*.log
+coverage/
+htmlcov/
+.tox/
+
