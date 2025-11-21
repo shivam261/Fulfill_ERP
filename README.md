@@ -108,8 +108,8 @@ COMMIT_FREQUENCY = 5000    # Database commits every 5000 records
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd Odata_Backend
+   git clone https://github.com/shivam261/Fulfill_ERP.git
+   cd Fulfill_ERP
    ```
 
 2. **Install dependencies using UV**

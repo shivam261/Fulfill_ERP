@@ -19,7 +19,7 @@ from src.webhooks.service import (
 )
 router = APIRouter(prefix="/webhooks", tags=["Webhooks"])
 
-@router.get("/getall",summary="get all webhooks",)
+@router.get("/all",summary="get all webhooks",)
 async def get_all_webhooks(
     session: Session = Depends(get_session)
 ) -> list[WebhookURL]:
@@ -28,7 +28,7 @@ async def get_all_webhooks(
     webHooks= await get_all_webhooks_service(session)
     return webHooks
 
-@router.get("/get_by_url/{url:path}",summary="get webhook by url",)
+@router.get("/url/{url:path}",summary="get webhook by url",)
 async def get_webhook_by_url(
     url: str,
     session: Session = Depends(get_session)
@@ -38,7 +38,7 @@ async def get_webhook_by_url(
     webHook= await get_webhook_by_url_service(session, url)
     return webHook  
 
-@router.delete("/del_by_url/{url:path}",summary="delete webhook by url",)
+@router.delete("/url/{url:path}",summary="delete webhook by url",)
 async def delete_webhook_by_url(
     url: str,
     session: Session = Depends(get_session)
@@ -48,7 +48,7 @@ async def delete_webhook_by_url(
     await delete_webhook_by_url_service(session, url)
     return {"detail": "Webhook deleted successfully"}
 
-@router.put("/update_by_id/{url:path}/{status}",summary="update webhook status by url",)
+@router.put("/id/{url:path}/{status}",summary="update webhook status by url",)
 async def update_webhook_status_by_url(
     url: str,
     status: str,
@@ -62,7 +62,7 @@ async def update_webhook_status_by_url(
     return webHook
 
 # create webhook url
-@router.post("/create", response_model=WebhookURL,summary="Create a new webhook URL",)
+@router.post("/new", response_model=WebhookURL,summary="Create a new webhook URL",)
 async def create_webhook_url(
     body: WebhookURL,
     session: Session = Depends(get_session)
@@ -72,7 +72,7 @@ async def create_webhook_url(
     return new_webhook
 
 
-@router.delete("/delete/all", summary="Delete all webhooks",)
+@router.delete("/all", summary="Delete all webhooks",)
 async def delete_all_webhooks(
     session: Session = Depends(get_session)
 ) -> dict:
