@@ -15,7 +15,7 @@ from src.auth.model import User
 from src.products.model import Product
 from src.webhooks.model import WebhookURL
 # this is the Alembic Config object, which provides
-# access to the values within the .ini file in use.
+
 config = context.config
 
 # Interpret the config file for Python logging.
