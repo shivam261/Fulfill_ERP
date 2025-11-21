@@ -13,6 +13,7 @@ from httpx import ASGITransport, AsyncClient
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from main import app
+
 from src.database import get_session
 
 
